@@ -16,10 +16,8 @@ mongoClient.connect(url,{},(error,client) => {                  // nawiazanie po
     const db = client.db(dbname)                                // utworzenie obiektu db na podstawieklienta bazy o nazwie mongo-test
 
 
-    
-
     const id = new ObjectID()
-    console.log(id.toHexString())
+    console.log(id.toString())
     db.collection('users').insertOne({
         _id: id,
         name: 'Joana',

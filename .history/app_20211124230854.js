@@ -16,34 +16,23 @@ mongoClient.connect(url,{},(error,client) => {                  // nawiazanie po
     const db = client.db(dbname)                                // utworzenie obiektu db na podstawieklienta bazy o nazwie mongo-test
 
 
-    
-
     const id = new ObjectID()
-    console.log(id.toHexString())
-    db.collection('users').insertOne({
-        _id: id,
-        name: 'Joana',
-        age: 67
-    }, (error, result) => {
-        if (error)
-            console.log('Adding User Error',error)
-        console.log(result)
-    })
+    console.log(id)
 
 
 
 
 
 
-// Dodwanie rekordu do bazy danych
-    // db.collection('users').insertOne({
-    //     name: 'Barbra',
-    //     age: 13
-    // }, (error, result) => {
-    //     if (error)
-    //         console.log('Adding User Error',error)
-    //     console.log(result)
-    // })
+// dodwanie rekordu do bazy danych
+//    db.collection('users').insertOne({
+//        name: 'Jon',
+//        age: 24
+//    }, (error, result) => {
+//        if (error)
+//            console.log('Adding User Error',error)
+//        console.log(result)
+//    })
 
 // Dodawanie wielu rekordow do bazy danych
 //    db.collection('users').insertMany([

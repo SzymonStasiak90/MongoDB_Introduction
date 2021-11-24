@@ -1,10 +1,20 @@
-// const mongoClient = require('mongodb').MongoClient              // zaciagniecie biblioteki mongodb
-const mongo = require('mongodb')
+const mongoClient = require('mongodb').MongoClient              // zaciagniecie biblioteki mongodb
+const mongo = require('mongo')
 const mongoClient = mongo.MongoClient
-const ObjectID = mongo.ObjectId
+const ObjectID = mongo.ObjectID
 
 const url = 'mongodb://127.0.0.1:27017'                         // ustanowienie portu komunikacji
 const dbname = 'mongo-test'                                     // nadanie nazwy bazie danych
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -16,34 +26,22 @@ mongoClient.connect(url,{},(error,client) => {                  // nawiazanie po
     const db = client.db(dbname)                                // utworzenie obiektu db na podstawieklienta bazy o nazwie mongo-test
 
 
-    
-
-    const id = new ObjectID()
-    console.log(id.toHexString())
-    db.collection('users').insertOne({
-        _id: id,
-        name: 'Joana',
-        age: 67
-    }, (error, result) => {
-        if (error)
-            console.log('Adding User Error',error)
-        console.log(result)
-    })
 
 
 
 
 
 
-// Dodwanie rekordu do bazy danych
-    // db.collection('users').insertOne({
-    //     name: 'Barbra',
-    //     age: 13
-    // }, (error, result) => {
-    //     if (error)
-    //         console.log('Adding User Error',error)
-    //     console.log(result)
-    // })
+
+// dodwanie rekordu do bazy danych
+//    db.collection('users').insertOne({
+//        name: 'Jon',
+//        age: 24
+//    }, (error, result) => {
+//        if (error)
+//            console.log('Adding User Error',error)
+//        console.log(result)
+//    })
 
 // Dodawanie wielu rekordow do bazy danych
 //    db.collection('users').insertMany([
